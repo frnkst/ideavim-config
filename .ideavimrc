@@ -5,44 +5,29 @@
 "   - IdeaVim-EasyMotion
 "   - Harpooner
 
-
-"" Base Settings
-"" ========================================================
+let mapleader = " "
 
 set scrolloff=10
 set linenumber
 set showmode
 set showcmd
-
 set smartcase
 set incsearch
 set hlsearch
 set ideajoin
-
 set visualbell
-
 set relativenumber
 set number
 
 " Use system clipboard
 set clipboard+=unnamed
 
-let mapleader = " "
-
-
-"" Plugin Settings
-"" ========================================================
+"" Plugins
 set surround
 set highlightedyank
 set sneak
 set nerdtree
-
-" Easymotion settings
 set easymotion
-nmap <leader>f <Plug>(easymotion-f)
-nmap <leader>F <Plug>(easymotion-s)
-let g:EasyMotion_do_mapping=0
-
 set notimeout
 
 "" Key mappings
@@ -61,8 +46,8 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-j> <C-w>j
 
 " Jump between methods
-nmap <leader>M <action>(MethodUp)
-nmap <leader>m <action>(MethodDown)
+" nmap <leader>M <action>(MethodUp)
+" nmap <leader>m <action>(MethodDown)
 
 " Easy visual indentation
 vnoremap < <gv
@@ -99,14 +84,14 @@ map <leader>df <action>(ToggleFullScreen)
 map <leader>ca <action>(ShowIntentionActions)
 map <leader>cc <action>(CommentByLineComment)
 
-" File navigation (Jump to)
+" File navigation
 map <leader><space> <action>(RecentChangedFiles)
-map <leader>jf <action>(GotoFile)
-map <leader>jr <action>(RecentFiles)
-map <leader>jp <action>(FindInPath)
-map <leader>jl <action>(RecentLocations)
-map <leader>js <action>(NewScratchFile)
-map <leader>je <action>(SearchEverywhere)
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>fp <action>(FindInPath)
+map <leader>fl <action>(RecentLocations)
+map <leader>fs <action>(NewScratchFile)
+map <leader>fe <action>(SearchEverywhere)
 
 " Close active tab
 map <leader>q <action>(CloseContent)
@@ -149,10 +134,14 @@ nmap <leader>t <action>(ActivateTerminalToolWindow)
 nmap <leader>p <action>(PasteMultiple)
 
 " Harpooner
-nmap <M-j> <action>(HarpoonerOpenFile0)
-nmap <M-k> <action>(HarpoonerOpenFile1)
-nmap <M-l> <action>(HarpoonerOpenFile2)
-nmap <M-;> <action>(HarpoonerOpenFile3)
+nmap <leader>j <action>(HarpoonerOpenFile0)
+nmap <leader>k <action>(HarpoonerOpenFile1)
+nmap <leader>l <action>(HarpoonerOpenFile2)
 
 nmap <leader>ha <action>(HarpoonerAddFile)
 nmap <leader>hm <action>(HarpoonerQuickMenu)
+
+" Easy Motion
+nmap <leader>m <Plug>(easymotion-f)
+nmap <leader>M <Plug>(easymotion-s)
+let g:EasyMotion_do_mapping=0
