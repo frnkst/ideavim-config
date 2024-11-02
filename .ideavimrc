@@ -41,6 +41,7 @@ set nerdtree
 set easymotion
 nmap <leader>f <Plug>(easymotion-f)
 nmap <leader>F <Plug>(easymotion-s)
+let g:EasyMotion_do_mapping=0
 
 set notimeout
 
@@ -83,10 +84,6 @@ inoremap <C-k> <action>(PopupMenu-selectPrev)
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
 
-" Folding
-map <leader>zc <action> CollapseAllRegions<CR>
-map <leader>zo <action> ExpandAllRegions<CR>
-
 " Window splits
 map <leader>wv <action>(SplitVertically)
 map <leader>ws <action>(SplitHorizontally)
@@ -103,9 +100,9 @@ map <leader>ca <action>(ShowIntentionActions)
 map <leader>cc <action>(CommentByLineComment)
 
 " File navigation (Jump to)
+map <leader><space> <action>(RecentChangedFiles)
 map <leader>jf <action>(GotoFile)
 map <leader>jr <action>(RecentFiles)
-map <leader>jc <action>(RecentChangedFiles)
 map <leader>jp <action>(FindInPath)
 map <leader>jl <action>(RecentLocations)
 map <leader>js <action>(NewScratchFile)
@@ -157,5 +154,5 @@ nmap <M-k> <action>(HarpoonerOpenFile1)
 nmap <M-l> <action>(HarpoonerOpenFile2)
 nmap <M-;> <action>(HarpoonerOpenFile3)
 
+nmap <leader>ha <action>(HarpoonerAddFile)
 nmap <leader>hm <action>(HarpoonerQuickMenu)
-
