@@ -5,8 +5,7 @@
 "   - IdeaVim-EasyMotion
 "   - Harpooner
 
-let mapleader = " "
-
+" ------------- Settings -------------
 set scrolloff=10
 set linenumber
 set showmode
@@ -30,11 +29,11 @@ set nerdtree
 set easymotion
 set notimeout
 
-"" Key mappings
-"" ========================================================
-
+" ------------- Main settings -------------
+let mapleader = " "
 inoremap jk <Esc>
 
+" ------------- Navigation -------------
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprev<CR>
@@ -46,8 +45,8 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-j> <C-w>j
 
 " Jump between methods
-" nmap <leader>M <action>(MethodUp)
-" nmap <leader>m <action>(MethodDown)
+" nmap <leader>D <action>(MethodUp)
+" nmap <leader>d <action>(MethodDown)
 
 " Easy visual indentation
 vnoremap < <gv
@@ -62,9 +61,7 @@ inoremap <C-k> <action>(PopupMenu-selectPrev)
 
 
 
-"" Leader commands
-"" ========================================================
-
+" ------------- Leader commands -------------
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
@@ -80,9 +77,10 @@ map <leader>dd <action>(ToggleDistractionFreeMode)
 map <leader>dz <action>(ToggleZenMode)
 map <leader>df <action>(ToggleFullScreen)
 
-" Actions
+" Code actions
 map <leader>ca <action>(ShowIntentionActions)
 map <leader>cc <action>(CommentByLineComment)
+map <leader>co <action>(OptimizeImports)
 
 " File navigation
 map <leader><space> <action>(RecentChangedFiles)
@@ -133,6 +131,8 @@ nmap <leader>t <action>(ActivateTerminalToolWindow)
 " Paste history
 nmap <leader>p <action>(PasteMultiple)
 
+
+" ------------- Plugin configuration  -------------
 " Harpooner
 nmap <leader>j <action>(HarpoonerOpenFile0)
 nmap <leader>k <action>(HarpoonerOpenFile1)
