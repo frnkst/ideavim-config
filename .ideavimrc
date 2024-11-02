@@ -1,0 +1,161 @@
+" Ideavim Config Late 2024
+" Needs the following plugins to be installed in IntelliJ
+"   - IdeaVim
+"   - AceJump
+"   - IdeaVim-EasyMotion
+"   - Harpooner
+
+
+"" Base Settings
+"" ========================================================
+
+set scrolloff=10
+set linenumber
+set showmode
+set showcmd
+
+set smartcase
+set incsearch
+set hlsearch
+set ideajoin
+
+set visualbell
+
+set relativenumber
+set number
+
+" Use system clipboard
+set clipboard+=unnamed
+
+let mapleader = " "
+
+
+"" Plugin Settings
+"" ========================================================
+set surround
+set highlightedyank
+set sneak
+set nerdtree
+
+" Easymotion settings
+set easymotion
+nmap <leader>f <Plug>(easymotion-f)
+nmap <leader>F <Plug>(easymotion-s)
+
+set notimeout
+
+"" Key mappings
+"" ========================================================
+
+inoremap jk <Esc>
+
+" Tab navigation
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>
+
+" Pane navigation
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+
+" Jump between methods
+nmap <leader>M <action>(MethodUp)
+nmap <leader>m <action>(MethodDown)
+
+" Easy visual indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" Execute macro saved in 'q' register
+nnoremap qj @q
+
+" Popup navigation
+inoremap <C-j> <action>(PopupMenu-selectNext)
+inoremap <C-k> <action>(PopupMenu-selectPrev)
+
+
+
+"" Leader commands
+"" ========================================================
+
+
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
+
+" Folding
+map <leader>zc <action> CollapseAllRegions<CR>
+map <leader>zo <action> ExpandAllRegions<CR>
+
+" Window splits
+map <leader>wv <action>(SplitVertically)
+map <leader>ws <action>(SplitHorizontally)
+map <leader>wu <action>(Unsplit)
+map <leader>wm <action>(MoveEditorToOppositeTabGroup)
+
+" Display options
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
+
+" Actions
+map <leader>ca <action>(ShowIntentionActions)
+map <leader>cc <action>(CommentByLineComment)
+
+" File navigation (Jump to)
+map <leader>jf <action>(GotoFile)
+map <leader>jr <action>(RecentFiles)
+map <leader>jc <action>(RecentChangedFiles)
+map <leader>jp <action>(FindInPath)
+map <leader>jl <action>(RecentLocations)
+map <leader>js <action>(NewScratchFile)
+map <leader>je <action>(SearchEverywhere)
+
+" Close active tab
+map <leader>q <action>(CloseContent)
+
+" Refactoring
+map <leader>rn <action>(RenameElement)
+map <leader>rm <action>(ExtractMethod)
+map <leader>rv <action>(IntroduceVariable)
+map <leader>rf <action>(IntroduceField)
+map <leader>rs <action>(ChangeSignature)
+map <leader>rr <action>(Refactorings.QuickListPopupAction)
+
+" Go to code
+nmap <leader>gd <action>(GotoDeclaration)
+nmap <leader>gy <action>(GotoTypeDeclaration)
+nmap <leader>gi <action>(GotoImplementation)
+nmap <leader>gu <action>(ShowUsages)
+nmap <leader>gt <action>(GotoTest)
+nmap <leader>gf <action>(Back)
+nmap <leader>gb <action>(Forward)
+
+" Git
+nmap <leader>gc <action>(Vcs.Show.Local.Changes)
+nmap <leader>gp <action>(Vcs.Push)
+nmap <leader>gb <action>(Git.Branches)
+nmap <leader>gf <action>(Git.Fetch)
+nmap <leader>ga <action>(Annotate)
+nmap <leader>gl <action>(Vcs.Show.Log)
+nmap <leader>gr <action>(Git.ResolveConflicts)
+nmap <leader>gh <action>(Github.View.Pull.Request)
+
+" Errors
+map <leader>en <action>(ReSharperGotoNextErrorInSolution)
+map <leader>ep <action>(ReSharperGotoPrevErrorInSolution)
+
+" Terminal
+nmap <leader>t <action>(ActivateTerminalToolWindow)
+
+" Paste history
+nmap <leader>p <action>(PasteMultiple)
+
+" Harpooner
+nmap <M-j> <action>(HarpoonerOpenFile0)
+nmap <M-k> <action>(HarpoonerOpenFile1)
+nmap <M-l> <action>(HarpoonerOpenFile2)
+nmap <M-;> <action>(HarpoonerOpenFile3)
+
+nmap <leader>hm <action>(HarpoonerQuickMenu)
+
