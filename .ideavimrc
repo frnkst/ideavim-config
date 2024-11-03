@@ -58,10 +58,9 @@ nnoremap qj @q
 " Popup navigation
 inoremap <C-j> <action>(PopupMenu-selectNext)
 inoremap <C-k> <action>(PopupMenu-selectPrev)
-    
+
 map <C-o> <action>(Back)
 map <C-i> <action>(Forward)
-
 
 " ------------- Leader commands -------------
 
@@ -73,6 +72,10 @@ map <leader>wv <action>(SplitVertically)
 map <leader>ws <action>(SplitHorizontally)
 map <leader>wu <action>(Unsplit)
 map <leader>wm <action>(MoveEditorToOppositeTabGroup)
+
+" Collapse / Expand
+map <leader>zc <action>(CollapseAllRegions)
+map <leader>ze <action>(ExpandAllRegions)
 
 " Display options
 map <leader>dd <action>(ToggleDistractionFreeMode)
