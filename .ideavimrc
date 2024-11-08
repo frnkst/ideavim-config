@@ -5,6 +5,10 @@
 "   - IdeaVim-EasyMotion
 "   - Harpooner
 
+" Additional settings on OSX:
+"   - OSX Settings > Keyboard > Shortcut > Input Sources: Untick the two boxes to have autocomplete on Ctrl + Space
+"   - IntelliJ > Keymap > Editor > Down map to Ctrl + J and Up map to Ctrl + K to move in context menus
+
 " ------------- Settings -------------
 set scrolloff=10
 set linenumber
@@ -88,19 +92,20 @@ map <leader>cc <action>(CommentByLineComment)
 map <leader>co <action>(OptimizeImports)
 
 " File navigation
-map <leader><space> <action>(RecentChangedFiles)
-map <leader>ff <action>(GotoFile)
+map <leader><space> <action>(GotoFile)
+map <leader>fc <action>(RecentChangedFiles)
 map <leader>fr <action>(RecentFiles)
-map <leader>fp <action>(FindInPath)
+map <leader>fs <action>(FindInPath)
+map <leader>fS <action>(SearchEverywhere)
 map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
-map <leader>fe <action>(SearchEverywhere)
+map / <action>(Find)
 
 " Close active tab
 map <leader>q <action>(CloseContent)
 
 " Refactoring
 map <leader>rn <action>(RenameElement)
+map <leader>rN <action>(RenameFile)
 map <leader>rm <action>(ExtractMethod)
 map <leader>rv <action>(IntroduceVariable)
 map <leader>rf <action>(IntroduceField)
